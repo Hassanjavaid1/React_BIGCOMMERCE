@@ -1,0 +1,115 @@
+/* ///////////////////
+  ///////////////////
+  ///////////////////
+  About.js
+  ///////////////////
+  ///////////////////
+  /////////////////// */
+
+.content {
+  background-color: #545483;
+  color: white;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#about_img {
+  height: 21rem;
+  margin-right: 4rem;
+}
+#sub_about_desc {
+  font-size: 1.1rem;
+  line-height: 2.2;
+  font-family: sans-serif;
+  margin-left: 10rem;
+}
+#sub_about_me {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-left: 11rem;
+}
+
+/* ///////////////////
+  ///////////////////
+  ///////////////////
+  Contact.js
+  ///////////////////
+  ///////////////////
+  /////////////////// */
+.contact {
+  background-color: #b7b7e3;
+  line-height: 0;
+}
+#sub_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.gmail {
+  width: 27rem;
+  padding: 1rem;
+  color: black;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: 0px solid;
+  font-family: sans-serif;
+  background: linear-gradient(82deg, #fffbfb, #cfd0e3);
+  outline: none;
+  transition: 1s;
+  box-shadow: 0px 0px 5px 0px #000000;
+}
+.gmail:hover {
+  box-shadow: 0px 0px 4px 2px #6861e7;
+  transition: 1s;
+}
+h6 {
+  font-size: 1.2rem;
+  position: relative;
+  top: 1.2rem;
+  font-family: sans-serif;
+}
+.user_gmail {
+  margin-bottom: -2rem;
+}
+form {
+  margin-bottom: 7.4rem;
+  position: relative;
+  top: 2rem;
+}
+#submit {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 0.6rem;
+
+  border: 0px solid;
+  background: #2987ff;
+  color: white;
+  border-radius: 0;
+  transition: 0.1s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  bottom: -3.5rem;
+  margin: auto;
+}
+#submit:hover {
+  scale: 1.1;
+  box-shadow: 0px 0px 2px 2px #d79ed5;
+}
+#contact_title {
+  position: relative;
+  top: 3.4rem;
+  font-size: 1.9rem;
+  text-shadow: 0px 3px 3px white;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 2px 2px #d79ed5;
+  transition: 1s;
+  background: linear-gradient(90deg, #fff5f5, #ffffff);
+}

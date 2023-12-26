@@ -1,0 +1,137 @@
+.container_addtocart{
+    background-color: #a9a9ff;
+    width: 22rem;
+    position: absolute;
+    z-index: 99;
+    float: right;
+    right: 0;
+    height: 32.6rem;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll
+}
+.container_addtocart::-webkit-scrollbar{
+    background-color: #ffffff;
+    width: 10px;
+}
+.container_addtocart::-webkit-scrollbar-thumb{
+    background-color: #002350;
+}
+.cart_nav{
+    display: flex;
+    align-items: center;
+    gap: 9rem;
+    white-space: nowrap;
+    position: sticky;
+    background: linear-gradient(45deg, #3f56cf, #625e5e);
+    color: white;
+    top: 0;
+    justify-content: center;
+    gap: 7rem;
+}
+#cart_img{
+    width: 3.5rem;
+    object-fit: cover;
+    height: 4rem
+}
+.price_inc_dec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    border-top: 1px solid gray;
+}
+.Addtocart{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.sub_Addtocart{
+    text-align: center;
+    border: 1px solid #686666;
+    border-radius:4px;
+    padding: 0.9rem;
+}
+.img_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.cart_title{
+    width: 15rem;
+    text-align: left;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+.btn{
+    background-color: #2987FF;
+    border: 0px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 1.6rem;
+    cursor: pointer;
+}
+#total_cart{
+    background-color: #0047e7;
+    border: 0px;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+}
+.inc_dec_button{
+    display: flex;
+    gap: 0.6rem;
+}
+.close_shopping{
+    color: #ff0d0d;
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+.sub_close_shopping{
+    position: absolute;
+    right: 1.4rem;
+    color: #8d5747;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+}
+#shopping{
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+}
+#item_count{
+    font-weight: bold;
+    font-size: 1.2rem;
+    color:  #fff817;
+}
+
+.Show{
+    display: block;
+}
+.Hide{
+    display: none;
+}
+#check_out{
+    background: #2987ff;
+    border: 0px;
+    padding: 0.6rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.total_price{
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 500;
+        font-family: sans-serif;
+}

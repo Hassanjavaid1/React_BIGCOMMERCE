@@ -1,0 +1,41 @@
+body::-webkit-scrollbar{
+  background-color: #e4e4e4;
+  width: 0.8rem;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #1E7FFF;
+}
+#scroll_to_top{
+  background: #2987FF;
+  border-radius: 0rem;
+}
+
+/* //////
+Css pre loader
+//////// */
+
+
+
+.loader {
+    border: 10px solid #E6E6FA;
+    border-radius: 50%;
+    border-top: 10px solid #6073ff;
+    width: 110px;
+    height: 110px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
