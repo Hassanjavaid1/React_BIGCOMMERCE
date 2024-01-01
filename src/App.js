@@ -50,7 +50,11 @@ function App() {
 
   return (
     <>
+<<<<<<< HEAD
       <BrowserRouter basename="/React_BIGCOMMERCE">
+=======
+      <BrowserRouter basename = '/React_BIGCOMMERCE'>
+>>>>>>> d92b73dbcafd54dfe74d16f44344d3c590cff78e
         <Suspense fallback={loading}>
           <Navbar />
           <AddToCart />
