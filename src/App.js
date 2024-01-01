@@ -50,13 +50,13 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/React_BIGCOMMERCE">
         <Suspense fallback={loading}>
           <Navbar />
           <AddToCart />
           <Routes>
             <Route
-              path="/React_BIGCOMMERCE"
+              path="/"
               exact
               element={
                 <>

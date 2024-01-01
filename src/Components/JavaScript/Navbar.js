@@ -35,13 +35,13 @@ function Navbar() {
       <div className="navbar">
         <div className="navbar_content">
           <div className="nav_title">
-            <Link to="/React_BIGCOMMERCE">
+            <Link to="/">
               <span id="big">BIG</span>
               <span id="commerce">COMMERCE</span>
             </Link>
           </div>
           <div className="nav_link_section">
-            <Link className="nav_link" to="/React_BIGCOMMERCE">
+            <Link className="nav_link" to="/">
               Home
             </Link>
             <Link className="nav_link" to="/product">

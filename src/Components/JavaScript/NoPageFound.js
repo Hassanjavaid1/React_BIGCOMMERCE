@@ -16,7 +16,7 @@ export default function PageNotFound() {
 
                 <div className="contant_box_404">
                   <h3 className="h2">Page not found!</h3>
-                  <Link to="/React_BIGCOMMERCE" className="box__button">
+                  <Link to="/" className="box__button">
                     Go back
                   </Link>
                 </div>
