@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React_BIGCOMMERCE/static/css/main.b2a2458c.css",
-    "main.js": "/React_BIGCOMMERCE/static/js/main.563fb275.js",
+    "main.js": "/React_BIGCOMMERCE/static/js/main.6bb0074a.js",
     "static/css/278.4a21e91b.chunk.css": "/React_BIGCOMMERCE/static/css/278.4a21e91b.chunk.css",
     "static/js/278.bf233d0f.chunk.js": "/React_BIGCOMMERCE/static/js/278.bf233d0f.chunk.js",
     "static/css/416.790c5ef7.chunk.css": "/React_BIGCOMMERCE/static/css/416.790c5ef7.chunk.css",
@@ -32,7 +32,7 @@
     "static/media/bg1.jpg": "/React_BIGCOMMERCE/static/media/bg1.3d5447a6da8e5537d2e8.jpg",
     "index.html": "/React_BIGCOMMERCE/index.html",
     "main.b2a2458c.css.map": "/React_BIGCOMMERCE/static/css/main.b2a2458c.css.map",
-    "main.563fb275.js.map": "/React_BIGCOMMERCE/static/js/main.563fb275.js.map",
+    "main.6bb0074a.js.map": "/React_BIGCOMMERCE/static/js/main.6bb0074a.js.map",
     "278.4a21e91b.chunk.css.map": "/React_BIGCOMMERCE/static/css/278.4a21e91b.chunk.css.map",
     "278.bf233d0f.chunk.js.map": "/React_BIGCOMMERCE/static/js/278.bf233d0f.chunk.js.map",
     "416.790c5ef7.chunk.css.map": "/React_BIGCOMMERCE/static/css/416.790c5ef7.chunk.css.map",
@@ -56,6 +56,6 @@
   },
   "entrypoints": [
     "static/css/main.b2a2458c.css",
-    "static/js/main.563fb275.js"
+    "static/js/main.6bb0074a.js"
   ]
 }
