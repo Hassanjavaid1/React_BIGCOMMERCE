@@ -9,8 +9,8 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Auth0Provider
-    domain="dev-3o4brdsvaugbjfit.us.auth0.com"
-    clientId="l2XD4Fp9OkH1qzy2iYwWCuClTOc3Hm4G"
+    domain="dev-yp1aessv3oomjxut.us.auth0.com"
+    clientId="shDewFSFmajAZ8kiqbj1sH7hceEbf3fQ"
     authorizationParams={{
       redirect_uri: window.location.origin
     }}
@@ -20,7 +20,7 @@ root.render(
       <App />
     </React.StrictMode>
   </MyContextProvider>
-      </Auth0Provider>
+  </Auth0Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
