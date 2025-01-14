@@ -79,23 +79,3 @@
   text-decoration: underline;
 }
 
-/* ////////////////
-  Main_Footer
-  //////////////// */
-
-.main_footer {
-  background-color: #111111;
-}
-.sub_main_footer {
-  padding: 0.2rem;
-  color: #9a9da2;
-  font-size: 1rem;
-  text-align: center;
-  padding-top: 0.6rem;
-}
-#main_footer_content {
-  font-size: 1rem;
-}
-#hassanjavaid {
-  color: #ffcc00;
-}

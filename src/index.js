@@ -2,25 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import MyContextProvider from "./Components/JavaScript/MyContextProvider";
-import { Auth0Provider } from "@auth0/auth0-react";
+import { ContextHook } from "./Components/JavaScript/ContextHook";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Auth0Provider
-    domain="dev-yp1aessv3oomjxut.us.auth0.com"
-    clientId="shDewFSFmajAZ8kiqbj1sH7hceEbf3fQ"
-    authorizationParams={{
-      redirect_uri: window.location.origin
-    }}
-  >
-      <MyContextProvider>
-  <React.StrictMode>
+        <BrowserRouter>
+  <ContextHook>
+    <React.StrictMode>
       <App />
     </React.StrictMode>
-  </MyContextProvider>
-  </Auth0Provider>,
+  </ContextHook>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

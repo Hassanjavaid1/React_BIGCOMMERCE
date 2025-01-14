@@ -1,7 +1,4 @@
 .product_container {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
   background-color: #e6e6fa;
 }
 .All_product_container {
@@ -9,14 +6,7 @@
   padding: 1rem;
   background-color: #e6e6fa;
 }
-h2 {
-  font-size: 2rem;
-  border-bottom: 1px solid grey;
-  width: 86%;
-  margin: auto;
-  margin-top: 3rem;
-  padding-bottom: 1rem;
-}
+
 .products_filter {
   margin-top: 1.5rem;
   display: flex;
@@ -24,6 +14,7 @@ h2 {
   align-items: center;
   gap: 1rem;
 }
+
 .main_product {
   font-size: 1.1rem;
   padding-left: 1rem;
@@ -82,21 +73,7 @@ h2 {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.title:hover{
-  text-decoration: underline;
-  color: white;
-}
-.product_detail_link:hover{
-  color: white;
-}
-.price {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.price:hover{
-  text-decoration: underline;
-  color: white;
-}
+
 .buy_now {
   background: #2987ff;
   border: 0px;

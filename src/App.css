@@ -1,41 +1,75 @@
-body::-webkit-scrollbar{
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
   background-color: #e4e4e4;
   width: 0.8rem;
 }
-body::-webkit-scrollbar-thumb{
-  background-color: #1E7FFF;
+body::-webkit-scrollbar-thumb {
+  background-color: #1e7fff;
 }
-#scroll_to_top{
-  background: #2987FF;
+#scroll_to_top {
+  background: #2987ff;
   border-radius: 0rem;
+}
+
+.nav_link:active {
+  text-decoration: underline 0.15em rgba(0, 0, 0, 1);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+  text-decoration-color: rgba(#3b82f6);
+  text-underline-offset: 0.4em;
+  transition: 0.2s;
+}
+
+.nav_link:hover {
+  text-decoration: underline 0.15em rgba(0, 0, 0, 1);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+  text-decoration-color: #3b82f6;
+  text-underline-offset: 0.4em;
+}
+
+.nav.default-nav {
+  border-radius: 0px;
+  height: 9rem;
 }
 
 /* //////
 Css pre loader
 //////// */
 
-
-
 .loader {
-    border: 10px solid #E6E6FA;
-    border-radius: 50%;
-    border-top: 10px solid #6073ff;
-    width: 110px;
-    height: 110px;
-    animation: spin 1s linear infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 99;
+  border: 10px solid #e6e6fa;
+  border-radius: 50%;
+  border-top: 10px solid #6073ff;
+  width: 110px;
+  height: 110px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
 }
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -3,86 +3,51 @@ import "./App.css";
 import Navbar from "./Components/JavaScript/Navbar";
 import "react-slideshow-image/dist/styles.css";
 import "react-slideshow-image/dist/styles.css";
-import ScrollToTop from "react-scroll-to-top";
 import "react-loading-skeleton/dist/skeleton.css";
-import MyContextProvider, {
-  MyContext,
-} from "./Components/JavaScript/MyContextProvider";
-import { BrowserRouter } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import ScrollTop from "./Components/JavaScript/ScrollTop";
+
+import ContextHook, { MyContext } from "./Components/JavaScript/ContextHook";
 import { Router, Routes, Route, Link } from "react-router-dom";
 import AddToCart from "./Components/JavaScript/AddToCart";
-const Background_banner = lazy(() =>
-  import("./Components/JavaScript/Background_banner")
-);
+const HeroBanners = lazy(() => import("./Components/JavaScript/HeroBanners"));
 const Footer = lazy(() => import("./Components/JavaScript/Footer"));
-const Products = lazy(() => import("./Components/JavaScript/Products"));
+const HomeProducts = lazy(() => import("./Components/JavaScript/HomeProducts"));
 const CategoryProduct = lazy(() =>
-  import("./Components/JavaScript/All_Products")
+  import("./Components/JavaScript/ProductCategories")
 );
-const All_Products = lazy(() => import("./Components/JavaScript/All_Products"));
+const ProductCategories = lazy(() =>
+  import("./Components/JavaScript/ProductCategories")
+);
 const ProductDetail = lazy(() =>
   import("./Components/JavaScript/ProductDetail")
 );
-const About = lazy(() => import("./Components/JavaScript/About"));
-const Contact = lazy(() => import("./Components/JavaScript/Contact"));
-const NoPageFound = lazy(() =>
-  import("./Components/JavaScript/NoPageFound.js")
-);
-
+//import second from 'DummyApi.json'
 function App() {
-  const [loading, setloading] = useState(true);
-  const { productData, setproductData } = useContext(MyContext);
-  const fetchData = async () => {
-    try {
-      const url = await fetch("https://fakestoreapi.com/products");
-      const data = await url.json();
-      setproductData(data);
-      setloading(false);
-    } catch (error) {
-      console.error(error);
-      setloading(false);
-    }
-  };
-  useEffect(() => {
-    console.log(productData);
-    fetchData();
-  }, []);
+  const [loading, setloading] = useState(false);
 
   return (
     <>
-<<<<<<< HEAD
-      <BrowserRouter basename="/React_BIGCOMMERCE">
-=======
-      <BrowserRouter basename = '/React_BIGCOMMERCE'>
->>>>>>> d92b73dbcafd54dfe74d16f44344d3c590cff78e
-        <Suspense fallback={loading}>
-          <Navbar />
-          <AddToCart />
-          <Routes>
-            <Route
-              path="/"
-              exact
-              element={
-                <>
-                  <Background_banner loading={loading} />
-                  <Products loading={loading} />
-                </>
-              }
-            />
-            <Route exact path="/product" element={<All_Products />} />
-            <Route
-              exact
-              path="/ProductDetail/:id"
-              element={<ProductDetail />}
-            />
-            <Route exact path="/About" element={<About />} />
-            <Route exact path="/Contact" element={<Contact />} />
-            <Route path="/*" element={<NoPageFound />} />
-          </Routes>
-          <ScrollToTop smooth id="scroll_to_top" />
-          <Footer />
-        </Suspense>
-      </BrowserRouter>
+      <Suspense fallback={loading}>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <>
+                <HeroBanners loading={loading} />
+                <HomeProducts loading={loading} />
+              </>
+            }
+          />
+          <Route exact path="/product" element={<ProductCategories />} />
+          <Route exact path="/ProductDetail/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<AddToCart />} />
+        </Routes>
+        <ScrollTop />
+        <Footer />
+      </Suspense>
     </>
   );
 }
