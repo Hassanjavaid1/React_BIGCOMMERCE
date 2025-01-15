@@ -21,7 +21,7 @@ function HomeProduct({ loading }) {
     setcartId(id);
     console.log(cartId);
   };
-console.log(productData)
+  console.log(productData)
   const notify = () => toast("Product had been added to cart!");
 
   return (

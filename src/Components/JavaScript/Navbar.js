@@ -5,7 +5,6 @@ import { MyContext } from "./ContextHook";
 
 function Navbar() {
   const { totalCartItem } = useContext(MyContext);
-  console.log(totalCartItem);
 
   return (
     <>

@@ -13,27 +13,30 @@ function ContextHook({ children }) {
   const [Show, setShow] = useState("Hide");
   const [loading, setLoading] = useState(true);
   const [totalCartItem, setTotalCartItem] = useState(0);
+  const [localStorageData, setLocalStorageData] = useState([]);
 
   //Fetch Api;
 
   const fetchApiData = async () => {
     try {
-      const url = await fetch("React_BIGCOMMERCE/DummyApi.json");
-      const data = await url.json();
-      setProductData(data);
-      setLoading(false);
+      if (!localStorageData) {
+        const url = await fetch("React_BIGCOMMERCE/DummyApi.json");
+        const data = await url.json();
+        console.log("apna data:", data)
+        setProductData(data);
+        setLocalStorageData(data)
+        setLoading(false);
+      } else {
+        setLocalStorageData(JSON.parse(localStorage.getItem("cartData")))
+      }
     } catch (error) {
       console.error(error);
     }
   };
-  let localStorageData = JSON.parse(localStorage.getItem("cartData")) || [];
-  useEffect(() => {
-    console.log(productData);
-    fetchApiData();
 
-    console.log(localStorageData);
+  useEffect(() => {
+    fetchApiData();
     setTotalCartItem(localStorageData.length);
-    console.log(totalCartItem);
   }, []);
 
   return (
