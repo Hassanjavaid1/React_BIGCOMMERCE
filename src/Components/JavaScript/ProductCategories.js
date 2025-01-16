@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MyContext } from "./ContextHook";
-import "../CSS/Product.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ProductSkeleton from "../Skeleton/ProductSkeleton";
 import "../CSS/ProductSkeleton.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -9,10 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import placeholder from "../Images/placeholder.jpg";
 function ProductCategories() {
   const {
-    setproductData,
     productData,
-    cartId,
-    setcartId,
     loading,
     setLoading,
   } = useContext(MyContext);
@@ -22,56 +18,67 @@ function ProductCategories() {
   function handleProductCategory(category) {
     setLoading(true);
     if (category == "all") {
-      setCategoryType(productData.homeData);
+      setCategoryType(productData);
     } else {
       setCategoryType(
-        productData.homeData.filter((items) => items.category == category)
+        productData.filter((items) => items.category == category)
       );
     }
+
     setTimeout(() => {
       setLoading(false);
     }, 900);
   }
 
   useEffect(() => {
-    setCategoryType(productData.homeData);
+    setCategoryType(productData);
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 900);
   }, []);
 
   return (
     <div className="container mx-auto p-8">
-      <h2 className="text-center">Category Wise Products</h2>
+      <h2 className="text-center text-3xl">Category Wise Products</h2>
       <ul className="flex items-center justify-center my-8 border-2 w-fit mx-auto">
-        <li
-          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer hover:bg-blue-500 hover:text-white active:bg-red-500"
+        <NavLink
+          to={"/BIGCOMMERCE/All"}
+          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer"
           onClick={() => handleProductCategory("all")}
         >
           {" "}
           All Products
-        </li>
-        <li
-          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer hover:bg-blue-500 hover:text-white active:bg-red-500"
+        </NavLink>
+        <NavLink
+          to={"/BIGCOMMERCE/Men-Cloths"}
+          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer"
           onClick={() => handleProductCategory("men's clothing")}
         >
           Men's Clothing
-        </li>
-        <li
-          className="text-[1.4rem] px-3 py-[.4rem] transition cursor-pointer hover:bg-blue-500 hover:text-white"
+        </NavLink>
+        <NavLink
+          to={"/BIGCOMMERCE/Women-Cloths"}
+          className="text-[1.4rem] px-3 py-[.4rem] transition cursor-pointer"
           onClick={() => handleProductCategory("women's clothing")}
         >
           Women's Clothing
-        </li>
-        <li
-          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer hover:bg-blue-500 hover:text-white"
+        </NavLink>
+        <NavLink
+          to={"/BIGCOMMERCE/Jewelry"}
+          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer"
           onClick={() => handleProductCategory("jewelery")}
         >
           Jewelry
-        </li>
-        <li
-          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer hover:bg-blue-500 hover:text-white"
+        </NavLink>
+        <NavLink
+          to={"/BIGCOMMERCE/Electronics"}
+          className="text-[1.4rem]  px-3 py-[.4rem] transition cursor-pointer"
           onClick={() => handleProductCategory("electronics")}
         >
           Electronics
-        </li>
+        </NavLink>
       </ul>
 
       <div className="flex flex-wrap justify-center items-center gap-6 py-8">
@@ -85,9 +92,9 @@ function ProductCategories() {
                 className="flex flex-col items-center overflow-hidden h-full"
               >
                 <>
-                  <Link to={`/productdetail/${id}`}>
+                  <Link to={`/BIGCOMMERCE/ProductDetail/${id}`}>
                     <img
-                      src={placeholder}
+                      src={image || placeholder}
                       className="h-[20rem] w-[20rem] object-cover overflow-hidden duration-500 hover:scale-x-110"
                       alt=""
                     />

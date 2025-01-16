@@ -4,21 +4,20 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import placeholder from "../Images/placeholder.jpg";
 function AddToCart() {
-  const { totalCartItem, setTotalCartItem, localStorageData } =
-    useContext(MyContext);
+  const { localStorageData, setLocalStorageData, setTotalCartItem } = useContext(MyContext);
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [Pquantity, setPQuantity] = useState(1);
+
   console.log(Pquantity);
 
   // Get Data from localStorage.
 
-  // let localStorageData = JSON.parse(localStorage.getItem("cartData")) || [];
-  setTotalCartItem(localStorageData.length);
   const removeFromCart = (productID) => {
-    let dataToStore = localStorageData.filter(
-      (items) => items.id !== productID
-    );
+    let dataToStore = localStorageData.filter((items) => items.id !== productID);
     localStorage.setItem("cartData", JSON.stringify(dataToStore));
+    setLocalStorageData(dataToStore);
+    setTotalCartItem(dataToStore.length);
   };
 
   const handleQtyChange = (e, currPrice, id) => {
@@ -43,14 +42,12 @@ function AddToCart() {
   };
 
   useEffect(() => {
-    localStorageData.reduce((prevValue, currentVal) => {
-      return setTotalPrice(Number(prevValue.price) + Number(currentVal.price));
-    }, 0);
-    if (!localStorageData) {
-      return;
-    }
+    // localStorageData.reduce((prevValue, currentVal) => {
+    //   console.log("reduce:",prevValue,currentVal)
+    //   return setTotalPrice(Number(prevValue.price) + Number(currentVal.price));
+    // }, 0);
   }, []);
-
+console.log("addtoCart:",localStorageData)
   return (
     <>
       <div className="container mx-auto p-16 py-24">
@@ -70,7 +67,7 @@ function AddToCart() {
                 >
                   <div className="flex items-center gap-5">
                     <img
-                      src={placeholder || image}
+                      src={image || placeholder}
                       alt=""
                       className="w-[5rem]"
                     />

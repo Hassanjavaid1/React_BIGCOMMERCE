@@ -73,3 +73,8 @@ Css pre loader
     transform: rotate(360deg);
   }
 }
+
+.active {
+  background-color: #3b82f6;
+  color: white;
+}

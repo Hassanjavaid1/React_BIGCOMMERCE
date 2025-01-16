@@ -12,13 +12,17 @@ function ContextHook({ children }) {
   const [cartId, setcartId] = useState("");
   const [Show, setShow] = useState("Hide");
   const [loading, setLoading] = useState(true);
+  
   const [totalCartItem, setTotalCartItem] = useState(0);
+  const [localStorageData, setLocalStorageData] = useState(
+    JSON.parse(localStorage.getItem("cartData")) || []
+  );
 
   //Fetch Api;
 
   const fetchApiData = async () => {
     try {
-      const url = await fetch("React_BIGCOMMERCE/DummyApi.json");
+      const url = await fetch("https://fakestoreapi.com/products");
       const data = await url.json();
       setProductData(data);
       setLoading(false);
@@ -26,14 +30,10 @@ function ContextHook({ children }) {
       console.error(error);
     }
   };
-  let localStorageData = JSON.parse(localStorage.getItem("cartData")) || [];
-  useEffect(() => {
-    console.log(productData);
-    fetchApiData();
 
-    console.log(localStorageData);
+  useEffect(() => {
+    fetchApiData();
     setTotalCartItem(localStorageData.length);
-    console.log(totalCartItem);
   }, []);
 
   return (
@@ -52,9 +52,10 @@ function ContextHook({ children }) {
           setcartId,
           Show,
           setShow,
-          setTotalCartItem,
+          localStorageData,
+          setLocalStorageData,
           totalCartItem,
-          localStorageData
+          setTotalCartItem,
         }}
       >
         {children}

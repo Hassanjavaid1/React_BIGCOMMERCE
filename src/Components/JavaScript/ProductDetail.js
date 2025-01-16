@@ -6,74 +6,82 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DetailSkeleton from "../Skeleton/DetailSkeleton";
 import placeholder from "../Images/placeholder.jpg";
+import AddToCart from "./AddToCart";
 
 function ProductDetail() {
-  const { productData, totalCartItem, setTotalCartItem } =
-    useContext(MyContext);
-  const [productDetail, setproductDetail] = useState([]);
-  const [loading, setloading] = useState(false);
+  const {
+    setLocalStorageData,
+    localStorageData,
+    totalCartItem,
+    setTotalCartItem,
+  } = useContext(MyContext);
+
+  const [productDetail, setProductDetail] = useState([]);
+
+  const [detailLoading, setDetailLoading] = useState(true);
+
   const { id } = useParams();
   console.log(id);
-  console.log(productDetail);
+
   const fetchProudctDetail = async () => {
-    // const url = await fetch(`https://fakestoreapi.com/products/${id}`);
-    // const data = await url.json();
-    // console.log(data);
-    // setproductDetail(data);
-    // setloading(false);
+    const url = await fetch(`https://fakestoreapi.com/products/${id}`);
+    const data = await url.json();
+    console.log(data);
+    console.log("mazi he mazi:", data);
+    setProductDetail(data);
+    setDetailLoading(false);
   };
   useEffect(() => {
     fetchProudctDetail();
-    console.log(productDetail);
+
+    setTimeout(() => {
+      setDetailLoading(false);
+    }, 900);
   }, []);
 
   const handleCartData = () => {
     let newData = JSON.parse(localStorage.getItem("cartData")) || [];
+    console.log(newData);
 
     //Check Duplicate Value
 
-    let isValueExist = newData.filter(
-      (items) => items.id == productData.homeData[0].id
-    );
+    let isValueExist = newData.filter((items) => items.id == productDetail.id);
     if (isValueExist.length > 0) {
       toast("Product already exist in your cart.");
     } else {
-      newData.push(productData.homeData[0]);
+      newData.push(productDetail);
       localStorage.setItem("cartData", JSON.stringify(newData));
-      setTotalCartItem(newData.length);
-      console.log(newData);
     }
+    setLocalStorageData(newData);
+    setTotalCartItem(newData.length);
   };
-  const notify = () => toast("Product had been added to cart!");
 
   return (
     <>
       <div className="bg-[#b7b7e3]">
         <div className="container mx-auto p-8 lg:py-20">
-          {loading ? (
+          {detailLoading ? (
             <DetailSkeleton />
           ) : (
             <div className="flex items-center justify-center gap-8">
               <img
-                src={placeholder || productData.homeData[0].image}
+                src={productDetail.image || placeholder}
                 className="w-full object-cover lg:w-2/6 lg:h-[35rem]"
                 alt=""
               />
               <div className="flex flex-col items-baseline gap-4 lg:w-2/5">
                 <h4 className="font-semibold text-lg uppercase">
-                  {productData.homeData[0].category}
+                  {productDetail.category}
                 </h4>
-                <h2 className="text-2xl font-normal">
-                  {productData.homeData[0].title}
-                </h2>
+                <h2 className="text-2xl font-normal">{productDetail.title}</h2>
                 <div className="flex items-center gap-6 text-2xl">
-                  <h2>${productData.homeData[0].price}</h2>
+                  <h2>${productDetail.price}</h2>
                   <div className="flex items-center gap-1 font-semibold">
                     4.1
                     <FaStar className="text-yellow-500" />
                   </div>
                 </div>
-                <p>{productData.homeData[0].description}</p>
+                <p>{productDetail.description}</p>
                 <div>
                   <button
                     onClick={handleCartData}

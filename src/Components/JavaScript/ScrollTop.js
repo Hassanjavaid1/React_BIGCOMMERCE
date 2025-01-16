@@ -3,8 +3,6 @@ import { FaArrowUp } from "react-icons/fa6";
 
 export default function ScrollTop() {
   const [showScroll, setShowScroll] = useState(false);
-
-  console.log(window.scrollY);
   const handleTopScroll = () => {
     window.scrollTo({
       top: 0,

@@ -2,18 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import "react-slideshow-image/dist/styles.css";
+import "react-slideshow-image/dist/styles.css";
+import "react-loading-skeleton/dist/skeleton.css";
+import "react-toastify/dist/ReactToastify.css";
 import { ContextHook } from "./Components/JavaScript/ContextHook";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-        <BrowserRouter>
-  <ContextHook>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ContextHook>
+  <BrowserRouter>
+    <ContextHook>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ContextHook>
   </BrowserRouter>
 );
 
