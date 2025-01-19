@@ -23,7 +23,6 @@ function HomeProduct() {
       setLoading(false);
     }, 900);
   }, []);
-console.log(productData)
   return (
     <div className="product_container">
       <div className="container mx-auto p-8 mt-2 text-center lg:mt-8">

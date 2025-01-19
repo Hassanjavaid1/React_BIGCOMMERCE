@@ -78,3 +78,27 @@ Css pre loader
   background-color: #3b82f6;
   color: white;
 }
+
+.menuActive{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 40vh;
+  top: 80px;
+  z-index: 999;
+  background: #e6e6fa;
+  left: 0;
+  right: 0px;
+  gap: 2rem;
+}
+
+
+.react-slideshow-container .nav:last-of-type {
+  right: 25px!important;
+}
+
+.react-slideshow-container .nav:first-of-type {
+  left: 25px!important;
+}

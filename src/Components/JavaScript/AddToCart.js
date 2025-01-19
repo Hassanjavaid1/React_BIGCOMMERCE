@@ -4,50 +4,65 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import placeholder from "../Images/placeholder.jpg";
 function AddToCart() {
-  const { localStorageData, setLocalStorageData, setTotalCartItem } = useContext(MyContext);
+  const { localStorageData, setLocalStorageData, setTotalCartItem } =
+    useContext(MyContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
-  const [Pquantity, setPQuantity] = useState(1);
-
-  console.log(Pquantity);
+  const [pQuantity, setPQuantity] = useState({});
+  //console.log("pQuanity Initial:", pQuantity);
 
   // Get Data from localStorage.
 
   const removeFromCart = (productID) => {
-    let dataToStore = localStorageData.filter((items) => items.id !== productID);
+    let dataToStore = localStorageData.filter(
+      (items) => items.id !== productID
+    );
     localStorage.setItem("cartData", JSON.stringify(dataToStore));
     setLocalStorageData(dataToStore);
     setTotalCartItem(dataToStore.length);
+    updatedTotalPrice(dataToStore);
   };
 
-  const handleQtyChange = (e, currPrice, id) => {
-    let inputVal = e.target.value;
+  const handleQtyChange = (e, id) => {
+    let inputVal = e.target.value || 1;
 
     if (inputVal <= 0) {
-      return setPQuantity(1);
+      return setPQuantity((prevQty) => ({
+        ...prevQty,
+        [id]: 1,
+      }));
     }
 
     setPQuantity((prevQty) => ({
-      ...prevQty,
-      [id]: Number(inputVal),
+      ...prevQty[id],
+      [id]: parseInt(inputVal),
     }));
 
-    setTotalPrice((prevPrice) => prevPrice + inputVal * currPrice);
+    //console.log("pQuanity onchange:", pQuantity);
+
+    updatedTotalPrice(localStorageData);
   };
 
-  const notify = () => toast("This feature comming soon!");
+  const updatedTotalPrice = (data) => {
+    let newPrice = data.reduce(
+      (accum, items) => accum + items.price * (pQuantity[items.id] || 1),
+      0
+    );
+    setTotalPrice(newPrice);
+  };
 
   const paymentCheckoutClick = () => {
     toast("This feature is in my todoList.");
   };
 
   useEffect(() => {
-    // localStorageData.reduce((prevValue, currentVal) => {
-    //   console.log("reduce:",prevValue,currentVal)
-    //   return setTotalPrice(Number(prevValue.price) + Number(currentVal.price));
-    // }, 0);
-  }, []);
-console.log("addtoCart:",localStorageData)
+    updatedTotalPrice(localStorageData);
+    let initialQty = localStorageData.reduce((accu, items) => {
+      accu[items.id] = 1;
+      return accu;
+    }, {});
+    setPQuantity(initialQty);
+  }, [localStorageData]);
   return (
     <>
       <div className="container mx-auto p-16 py-24">
@@ -79,8 +94,8 @@ console.log("addtoCart:",localStorageData)
                   <input
                     type="number"
                     name="quantity"
-                    value={Pquantity[id] || 1}
-                    onChange={(event) => handleQtyChange(event, price, id)}
+                    value={pQuantity[id]}
+                    onChange={(event) => handleQtyChange(event, id)}
                     className="border-2 p-1 font-semibold text-[1.2rem] text-center"
                   />
                   <FaRegWindowClose

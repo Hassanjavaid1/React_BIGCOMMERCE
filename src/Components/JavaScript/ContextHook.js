@@ -20,9 +20,11 @@ function ContextHook({ children }) {
 
   //Fetch Api;
 
+  let apiURL = 'https://fakestoreapi.com/products'
   const fetchApiData = async () => {
     try {
-      const url = await fetch("https://fakestoreapi.com/products");
+     // apiURL = "BIGCOMMERCE/DummyApi.json"
+      const url = await fetch(apiURL);
       const data = await url.json();
       setProductData(data);
       setLoading(false);

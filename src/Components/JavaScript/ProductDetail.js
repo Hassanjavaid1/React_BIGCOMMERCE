@@ -21,13 +21,13 @@ function ProductDetail() {
   const [detailLoading, setDetailLoading] = useState(true);
 
   const { id } = useParams();
-  console.log(id);
+  //console.log(id);
 
   const fetchProudctDetail = async () => {
     const url = await fetch(`https://fakestoreapi.com/products/${id}`);
     const data = await url.json();
-    console.log(data);
-    console.log("mazi he mazi:", data);
+    //console.log(data);
+    //console.log("mazi he mazi:", data);
     setProductDetail(data);
     setDetailLoading(false);
   };
@@ -41,7 +41,7 @@ function ProductDetail() {
 
   const handleCartData = () => {
     let newData = JSON.parse(localStorage.getItem("cartData")) || [];
-    console.log(newData);
+    //console.log(newData);
 
     //Check Duplicate Value
 

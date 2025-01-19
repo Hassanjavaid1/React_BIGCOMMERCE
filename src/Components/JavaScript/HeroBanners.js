@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Slide } from "react-slideshow-image";
+import { Slide, Zoom } from "react-slideshow-image";
 import { Link } from "react-scroll";
 import bg1 from "../Images/bg1.jpg";
 import bg2 from "../Images/bg2.jpg";
@@ -40,8 +40,8 @@ function Background_banner() {
   ];
 
   const properties = {
-    duration: 555000,
-    transitionDuration: 55500,
+    duration: 5000000,
+    transitionDuration: 500000,
     infinite: true,
     easing: "ease",
     auto: false,
@@ -60,13 +60,13 @@ function Background_banner() {
           {slideImages.map((slideImage, index) => (
             <div key={index}>
               {loading ? (
-                <Skeleton height={"25rem"} borderRadius={"0rem!important"} />
+                <Skeleton height={"25rem"} borderRadius={"1rem!important"} />
               ) : (
                 <Link to="Products" spy={true} smooth={true} duration={250}>
                   <div className="flex items-center justify-center">
                     <img
                       src={slideImage.url}
-                      className="rounded-lg object-cover w-full"
+                      className="rounded-sm object-cover w-full"
                       alt=""
                     />
                   </div>
