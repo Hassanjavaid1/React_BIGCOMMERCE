@@ -11,13 +11,10 @@ import AddToCart from "./AddToCart";
 function ProductDetail() {
   const {
     setLocalStorageData,
-    localStorageData,
-    totalCartItem,
     setTotalCartItem,
   } = useContext(MyContext);
 
   const [productDetail, setProductDetail] = useState([]);
-
   const [detailLoading, setDetailLoading] = useState(true);
 
   const { id } = useParams();

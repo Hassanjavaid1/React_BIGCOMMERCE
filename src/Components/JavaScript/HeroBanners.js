@@ -8,7 +8,6 @@ import bg4 from "../Images/bg4.jpg";
 import bg5 from "../Images/bg5.jpg";
 import bg6 from "../Images/bg6.jpg";
 import bg7 from "../Images/bg7.jpg";
-import Products from "./HomeProducts";
 import Skeleton from "react-loading-skeleton";
 import { MyContext } from "./ContextHook";
 
@@ -40,8 +39,8 @@ function Background_banner() {
   ];
 
   const properties = {
-    duration: 5000000,
-    transitionDuration: 500000,
+    duration: 5000,
+    transitionDuration: 500,
     infinite: true,
     easing: "ease",
     auto: false,
@@ -63,10 +62,10 @@ function Background_banner() {
                 <Skeleton height={"25rem"} borderRadius={"1rem!important"} />
               ) : (
                 <Link to="Products" spy={true} smooth={true} duration={250}>
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center bg-white">
                     <img
                       src={slideImage.url}
-                      className="rounded-sm object-cover w-full"
+                      className="rounded-lg object-cover w-full"
                       alt=""
                     />
                   </div>

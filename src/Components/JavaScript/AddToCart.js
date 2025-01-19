@@ -3,12 +3,14 @@ import { MyContext } from "./ContextHook";
 import { FaRegWindowClose } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import placeholder from "../Images/placeholder.jpg";
+
 function AddToCart() {
   const { localStorageData, setLocalStorageData, setTotalCartItem } =
     useContext(MyContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [pQuantity, setPQuantity] = useState({});
+
   //console.log("pQuanity Initial:", pQuantity);
 
   // Get Data from localStorage.
@@ -36,7 +38,7 @@ function AddToCart() {
     setPQuantity((prevQty) => ({
       ...prevQty[id],
       [id]: parseInt(inputVal),
-    }));
+    }))
 
     //console.log("pQuanity onchange:", pQuantity);
 
@@ -45,8 +47,7 @@ function AddToCart() {
 
   const updatedTotalPrice = (data) => {
     let newPrice = data.reduce(
-      (accum, items) => accum + items.price * (pQuantity[items.id] || 1),
-      0
+      (acc, items) => acc + items.price * (pQuantity[items.id] || 1)
     );
     setTotalPrice(newPrice);
   };
@@ -57,12 +58,15 @@ function AddToCart() {
 
   useEffect(() => {
     updatedTotalPrice(localStorageData);
+
     let initialQty = localStorageData.reduce((accu, items) => {
       accu[items.id] = 1;
       return accu;
     }, {});
+
     setPQuantity(initialQty);
   }, [localStorageData]);
+
   return (
     <>
       <div className="container mx-auto p-16 py-24">
