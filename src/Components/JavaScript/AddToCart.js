@@ -38,7 +38,7 @@ function AddToCart() {
     setPQuantity((prevQty) => ({
       ...prevQty[id],
       [id]: parseInt(inputVal),
-    }))
+    }));
 
     //console.log("pQuanity onchange:", pQuantity);
 
@@ -46,10 +46,14 @@ function AddToCart() {
   };
 
   const updatedTotalPrice = (data) => {
+    console.log("data inside of totalprice", data);
     let newPrice = data.reduce(
-      (acc, items) => acc + items.price * (pQuantity[items.id] || 1)
+      (acc, items) => acc + items.price * (pQuantity[items.id] || 1),
+      0
     );
+    console.log("after reduce of updatetotalprice:", newPrice);
     setTotalPrice(newPrice);
+    console.log("newPrice:", newPrice);
   };
 
   const paymentCheckoutClick = () => {
@@ -57,15 +61,16 @@ function AddToCart() {
   };
 
   useEffect(() => {
-    updatedTotalPrice(localStorageData);
-
     let initialQty = localStorageData.reduce((accu, items) => {
       accu[items.id] = 1;
       return accu;
     }, {});
 
     setPQuantity(initialQty);
+    updatedTotalPrice(localStorageData);
   }, [localStorageData]);
+
+  console.log(totalPrice);
 
   return (
     <>
