@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/BIGCOMMERCE/static/css/main.4ee95788.css",
-    "main.js": "/BIGCOMMERCE/static/js/main.33e05e6e.js",
+    "main.js": "/BIGCOMMERCE/static/js/main.f5503b46.js",
     "static/js/24.d297ee1e.chunk.js": "/BIGCOMMERCE/static/js/24.d297ee1e.chunk.js",
     "static/css/750.43658790.chunk.css": "/BIGCOMMERCE/static/css/750.43658790.chunk.css",
     "static/js/750.5f386bbb.chunk.js": "/BIGCOMMERCE/static/js/750.5f386bbb.chunk.js",
     "static/css/991.43658790.chunk.css": "/BIGCOMMERCE/static/css/991.43658790.chunk.css",
     "static/js/991.262f890e.chunk.js": "/BIGCOMMERCE/static/js/991.262f890e.chunk.js",
     "static/css/468.43658790.chunk.css": "/BIGCOMMERCE/static/css/468.43658790.chunk.css",
-    "static/js/468.3a372497.chunk.js": "/BIGCOMMERCE/static/js/468.3a372497.chunk.js",
-    "static/js/795.457a9277.chunk.js": "/BIGCOMMERCE/static/js/795.457a9277.chunk.js",
+    "static/js/468.ff587bf2.chunk.js": "/BIGCOMMERCE/static/js/468.ff587bf2.chunk.js",
+    "static/js/795.a35ca2f9.chunk.js": "/BIGCOMMERCE/static/js/795.a35ca2f9.chunk.js",
     "static/js/630.19c23d8b.chunk.js": "/BIGCOMMERCE/static/js/630.19c23d8b.chunk.js",
     "static/js/787.40901e99.chunk.js": "/BIGCOMMERCE/static/js/787.40901e99.chunk.js",
     "static/js/85.92d69124.chunk.js": "/BIGCOMMERCE/static/js/85.92d69124.chunk.js",
@@ -27,15 +27,15 @@
     "static/media/bg1.jpg": "/BIGCOMMERCE/static/media/bg1.3d5447a6da8e5537d2e8.jpg",
     "index.html": "/BIGCOMMERCE/index.html",
     "main.4ee95788.css.map": "/BIGCOMMERCE/static/css/main.4ee95788.css.map",
-    "main.33e05e6e.js.map": "/BIGCOMMERCE/static/js/main.33e05e6e.js.map",
+    "main.f5503b46.js.map": "/BIGCOMMERCE/static/js/main.f5503b46.js.map",
     "24.d297ee1e.chunk.js.map": "/BIGCOMMERCE/static/js/24.d297ee1e.chunk.js.map",
     "750.43658790.chunk.css.map": "/BIGCOMMERCE/static/css/750.43658790.chunk.css.map",
     "750.5f386bbb.chunk.js.map": "/BIGCOMMERCE/static/js/750.5f386bbb.chunk.js.map",
     "991.43658790.chunk.css.map": "/BIGCOMMERCE/static/css/991.43658790.chunk.css.map",
     "991.262f890e.chunk.js.map": "/BIGCOMMERCE/static/js/991.262f890e.chunk.js.map",
     "468.43658790.chunk.css.map": "/BIGCOMMERCE/static/css/468.43658790.chunk.css.map",
-    "468.3a372497.chunk.js.map": "/BIGCOMMERCE/static/js/468.3a372497.chunk.js.map",
-    "795.457a9277.chunk.js.map": "/BIGCOMMERCE/static/js/795.457a9277.chunk.js.map",
+    "468.ff587bf2.chunk.js.map": "/BIGCOMMERCE/static/js/468.ff587bf2.chunk.js.map",
+    "795.a35ca2f9.chunk.js.map": "/BIGCOMMERCE/static/js/795.a35ca2f9.chunk.js.map",
     "630.19c23d8b.chunk.js.map": "/BIGCOMMERCE/static/js/630.19c23d8b.chunk.js.map",
     "787.40901e99.chunk.js.map": "/BIGCOMMERCE/static/js/787.40901e99.chunk.js.map",
     "85.92d69124.chunk.js.map": "/BIGCOMMERCE/static/js/85.92d69124.chunk.js.map",
@@ -46,6 +46,6 @@
   },
   "entrypoints": [
     "static/css/main.4ee95788.css",
-    "static/js/main.33e05e6e.js"
+    "static/js/main.f5503b46.js"
   ]
 }
